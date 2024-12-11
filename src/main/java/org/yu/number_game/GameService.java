@@ -1,7 +1,11 @@
 package org.yu.number_game;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.yu.number_game.entity.Member;
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
@@ -14,6 +18,11 @@ import java.util.Random;
 public class GameService {
 
     private final Random random = new Random();
+    private final MemberRepository memberRepository;
+
+    public GameService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     // 점수 계산 로직
     public int calculateScore(long remainingTime) {
@@ -87,6 +96,29 @@ public class GameService {
         }
 
         return result;
+    }
+
+    public Member getMember(String username) {
+        return memberRepository.findByUsername(username);
+    }
+
+    public Member saveMember(String username, String password) {
+        return memberRepository.save(new Member(
+                username,
+                password,
+                0
+        ));
+    }
+
+    @Transactional
+    public void updateScore(String username, int score) {
+        Member member = memberRepository.findByUsername(username);
+        log.info("score = {}",score);
+        member.updateHighScore(score);
+    }
+
+    public List<Member> findMemberRanking() {
+        return memberRepository.findAllByOrderByHighScoreDesc(PageRequest.of(0,10));
     }
 }
 

@@ -198,3 +198,230 @@ body {
 .result-container a:hover {
     background-color: #2980b9; /* 더 어두운 파란색 */
 }
+
+/* 로그인 화면 컨테이너 */
+.login-container {
+    text-align: center;
+    background-color: #ffffff; /* 흰색 배경 */
+    border-radius: 10px; /* 둥근 테두리 */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 가벼운 그림자 */
+    padding: 40px 60px;
+    max-width: 400px;
+    width: 90%; /* 반응형 크기 */
+    margin: 0 auto;
+}
+
+/* 로그인 제목 */
+.login-container h1 {
+    color: #2c3e50; /* 진한 파란색 */
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+/* 입력 그룹 */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 1em;
+    color: #34495e; /* 어두운 회색 */
+    margin-bottom: 8px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 2px solid #bdc3c7;
+    border-radius: 5px;
+}
+
+/* 버튼 스타일 */
+.login-container button {
+    background-color: #3498db; /* 파란색 */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-container button:hover {
+    background-color: #2980b9; /* 더 어두운 파란색 */
+}
+
+/* 경고 메시지 스타일 */
+.error-message {
+    color: #e74c3c; /* 빨간색 */
+    font-size: 1em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* 준비 화면 컨테이너 */
+.ready-container {
+    text-align: center;
+    background-color: #ffffff; /* 흰색 배경 */
+    border-radius: 10px; /* 둥근 테두리 */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 가벼운 그림자 */
+    padding: 40px 60px;
+    max-width: 400px;
+    width: 90%; /* 반응형 크기 */
+    margin: 0 auto;
+}
+
+/* 준비 화면 제목 */
+.ready-container h1 {
+    color: #2c3e50; /* 진한 파란색 */
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+/* 버튼 그룹 */
+.button-group {
+    margin-top: 30px;
+}
+
+/* 버튼 스타일 */
+.button-group .button {
+    display: inline-block;
+    margin: 10px;
+    text-decoration: none;
+    background-color: #3498db; /* 파란색 */
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button-group .button:hover {
+    background-color: #2980b9; /* 더 어두운 파란색 */
+}
+
+/* 로그아웃 버튼 스타일 */
+.button-group .logout {
+    background-color: #e74c3c; /* 빨간색 */
+}
+
+.button-group .logout:hover {
+    background-color: #c0392b; /* 더 어두운 빨간색 */
+}
+
+/* 레이아웃: 좌측 랭킹과 중앙 준비 화면 */
+.ready-layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; /* 좌측 정렬 */
+    align-items: center; /* 세로축 가운데 정렬 */
+    height: 100vh; /* 화면 전체 높이 */
+    padding: 20px;
+    gap: 40px; /* 랭킹 섹션과 준비 섹션 간격 */
+}
+
+
+/* 좌측 랭킹 섹션 */
+.ranking-section {
+    flex: 1; /* 좌측 영역 크기 */
+    max-width: 300px;
+    background-color: #f8f9fa; /* 연한 배경색 */
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    padding: 20px;
+    height: calc(100vh - 40px); /* 화면 높이에 맞춤 */
+    overflow-y: auto; /* 내용이 많을 경우 스크롤 */
+    margin-left: 20px; /* 최좌측에서 약간 떨어지도록 마진 추가 */
+}
+
+.ranking-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #2c3e50; /* 진한 파란색 */
+    text-align: center;
+}
+
+/* 랭킹 리스트 */
+.ranking-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ranking-section li {
+    font-size: 1.1em;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 1, 2, 3등 강조 */
+.ranking-section li.first {
+    font-weight: bold;
+    color: #e74c3c; /* 빨간색 */
+}
+
+.ranking-section li.second {
+    font-weight: bold;
+    color: #f1c40f; /* 금색 */
+}
+
+.ranking-section li.third {
+    font-weight: bold;
+    color: #3498db; /* 파란색 */
+}
+
+/* 중앙 준비 섹션 */
+.main-section {
+    flex: 2; /* 중앙 영역 크기 */
+    text-align: center;
+    background-color: #ffffff; /* 흰색 배경 */
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 40px 60px;
+    max-width: 600px;
+    width: 100%;
+    margin-top: auto; /* 상단에서 떨어지게 설정 */
+    margin-bottom: auto; /* 하단에서 떨어지게 설정 */
+}
+
+.main-section h1 {
+    color: #2c3e50; /* 진한 파란색 */
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.main-section .button-group {
+    margin-top: 30px;
+}
+
+/* 버튼 스타일 */
+.button-group .button {
+    display: inline-block;
+    margin: 10px;
+    text-decoration: none;
+    background-color: #3498db; /* 파란색 */
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button-group .button:hover {
+    background-color: #2980b9; /* 더 어두운 파란색 */
+}
+
+/* 로그아웃 버튼 스타일 */
+.button-group .logout {
+    background-color: #e74c3c; /* 빨간색 */
+}
+
+.button-group .logout:hover {
+    background-color: #c0392b; /* 더 어두운 빨간색 */
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>게임 준비</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+<div class="ready-layout">
+  <!-- 좌측 랭킹 섹션 -->
+  <aside class="ranking-section">
+    <h2>🏆 랭킹</h2>
+    <ul>
+      <li th:each="member, iter : ${ranking}"
+          th:classappend="${iter.index == 0} ? 'first' : (iter.index == 1 ? 'second' : (iter.index == 2 ? 'third' : ''))">
+        <span th:text="${iter.index + 1}">1</span>.
+        <span th:text="${member.username}">사용자 이름</span> -
+        <span th:text="${member.highScore}">0</span> 점
+      </li>
+    </ul>
+  </aside>
+
+  <!-- 중앙 준비 섹션 -->
+  <main class="main-section">
+    <h1>환영합니다, <span th:text="${member.username}"></span>님!</h1>
+    <p>게임을 시작하거나 로그아웃할 수 있습니다.</p>
+    <div class="button-group">
+      <a th:href="@{/game/start}" class="button">게임 시작</a>
+      <a th:href="@{/game/logout}" class="button logout">로그아웃</a>
+    </div>
+  </main>
+</div>
+</body>
+</html>
