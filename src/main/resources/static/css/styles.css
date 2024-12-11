@@ -1,0 +1,200 @@
+/* 공통 스타일 */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff; /* 밝은 하늘색 배경 */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 화면 전체 높이 */
+}
+
+/* 중앙 정렬 컨테이너 */
+.container {
+    text-align: center;
+    background-color: #ffffff; /* 흰색 배경 */
+    border-radius: 10px; /* 둥근 테두리 */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 가벼운 그림자 */
+    padding: 30px 40px;
+    max-width: 500px;
+    width: 90%; /* 반응형 크기 */
+}
+
+/* 헤더 스타일 */
+.container h1 {
+    color: #2c3e50; /* 진한 파란색 */
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+/* 문제 스타일 */
+.container .problem {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #1abc9c; /* 청록색 강조 */
+}
+
+/* 타이머 스타일 */
+.container .timer {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #e74c3c; /* 빨간색 강조 */
+}
+
+/* 메시지 스타일 */
+.container .message {
+    color: #e67e22; /* 주황색 */
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* 입력 필드와 버튼 스타일 */
+.container form input[type="number"] {
+    width: 80%;
+    padding: 10px;
+    font-size: 1em;
+    border: 2px solid #bdc3c7;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.container form button {
+    background-color: #3498db; /* 파란색 */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.container form button:hover {
+    background-color: #2980b9; /* 더 어두운 파란색 */
+}
+
+/* 제목 스타일 */
+.container h1 {
+    color: #2c3e50; /* 진한 파란색 */
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+/* 카운트다운 숫자 스타일 */
+.container .countdown {
+    font-size: 3em; /* 큰 숫자 */
+    font-weight: bold;
+    color: #e74c3c; /* 빨간색 강조 */
+    margin: 20px 0;
+}
+
+/* 문제 섹션 */
+.problem-section {
+    margin: 20px 0;
+}
+.problem-label {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #34495e;
+}
+.problem-text {
+    font-size: 1.5em;
+    color: #1abc9c; /* 청록색 */
+}
+
+/* 타이머 섹션 */
+.timer-section {
+    margin: 20px 0;
+}
+.timer-label {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #e67e22; /* 주황색 */
+}
+.timer-value {
+    font-size: 1.5em;
+    color: #e74c3c; /* 빨간색 */
+}
+
+/* 메시지 */
+.message {
+    color: #e67e22; /* 주황색 */
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+/* 입력 섹션 */
+.input-section {
+    margin-top: 20px;
+}
+.input-section input[type="number"] {
+    width: 70%;
+    padding: 10px;
+    font-size: 1em;
+    border: 2px solid #bdc3c7;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.input-section button {
+    background-color: #3498db; /* 파란색 */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.input-section button:hover {
+    background-color: #2980b9; /* 더 어두운 파란색 */
+}
+
+/* 결과 화면 컨테이너 */
+.result-container {
+    text-align: center;
+    background-color: #ffffff; /* 흰색 배경 */
+    border-radius: 10px; /* 둥근 테두리 */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 가벼운 그림자 */
+    padding: 40px 60px;
+    max-width: 400px;
+    width: 90%; /* 반응형 크기 */
+}
+
+/* 결과 화면 제목 */
+.result-container h1 {
+    color: #2c3e50; /* 진한 파란색 */
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* 결과 텍스트 */
+.result-container p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #34495e; /* 어두운 회색 */
+}
+
+/* 라운드와 점수 강조 */
+.result-container .highlight {
+    font-weight: bold;
+    color: #1abc9c; /* 청록색 강조 */
+}
+
+/* 버튼 스타일 */
+.result-container a {
+    display: inline-block;
+    margin-top: 30px;
+    text-decoration: none;
+    background-color: #3498db; /* 파란색 */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+.result-container a:hover {
+    background-color: #2980b9; /* 더 어두운 파란색 */
+}

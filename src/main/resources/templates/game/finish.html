@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>게임 종료</title>
+</head>
+<body>
+    <h1>게임 종료!</h1>
+    <p>최종 점수: <span th:text="${finalScore}"></span></p>
+    <a th:href="@{/templates/game}">메인으로 돌아가기</a>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>게임 준비</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <script>
+        let countdown = 3; // 카운트다운 시작 시간
+
+        function updateCountdown() {
+            const countdownElement = document.getElementById('countdown');
+            countdownElement.textContent = countdown;
+
+            if (countdown > 0) {
+                countdown--;
+                setTimeout(updateCountdown, 1000); // 1초마다 업데이트
+            } else {
+                document.getElementById('startLink').click(); // 카운트다운 종료 후 링크 클릭
+            }
+        }
+
+        // 페이지 로드 시 카운트다운 시작
+        window.onload = updateCountdown;
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>게임이 곧 시작됩니다!</h1>
+        <p class="countdown" id="countdown">3</p> <!-- 큰 카운트다운 숫자 -->
+        <a id="startLink" th:href="@{/game/round/1(score=${score})}" style="display:none;">게임 시작</a>
+    </div>
+</body>
+</html>

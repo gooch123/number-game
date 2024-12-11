@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>숫자 계산 게임</title>
+</head>
+<body>
+<h1>숫자 계산 게임</h1>
+<p th:text="${message}"></p>
+<form th:action="@{/game/start}" method="post">
+    <button type="submit">게임 시작</button>
+</form>
+</body>
+</html>

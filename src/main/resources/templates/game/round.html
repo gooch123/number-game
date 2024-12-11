@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>라운드 진행</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <script>
+        let remainingTime = [[${remainingTime} ?: 30000]]; // 서버에서 전달된 남은 시간
+
+        function updateTimer() {
+            const timerElement = document.getElementById('timer');
+            if (remainingTime > 0) {
+                timerElement.textContent = Math.floor(remainingTime / 1000) + " 초";
+                remainingTime -= 1000; // 1초씩 감소
+                setTimeout(updateTimer, 1000); // 1초 후 재호출
+            } else {
+                alert('시간 초과! 라운드 종료');
+                document.getElementById('answerForm').submit(); // 자동 제출
+            }
+        }
+
+        // 페이지 로드 시 타이머 시작
+        window.onload = updateTimer;
+    </script>
+</head>
+<body>
+<div class="container">
+    <h1 class="round-title">라운드 <span th:text="${round}"></span></h1>
+
+    <div class="problem-section">
+        <p class="problem-label">문제:</p>
+        <p class="problem-text" th:text="${problem}"></p>
+    </div>
+
+    <div class="timer-section">
+        <p class="timer-label">남은 시간:</p>
+        <p class="timer-value" id="timer"></p>
+    </div>
+
+    <p class="message" th:if="${message}" th:text="${message}"></p>
+
+    <form id="answerForm" th:action="@{/game/round/{round}/submit(round=${round})}" method="post">
+        <input type="hidden" name="problem" th:value="${problem}" />
+        <input type="hidden" name="startTime" th:value="${startTime}" />
+        <input type="hidden" name="score" th:value="${score}" />
+        <div class="input-section">
+            <input type="number" name="userAnswer" placeholder="정답 입력" required />
+            <button type="submit">제출</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
